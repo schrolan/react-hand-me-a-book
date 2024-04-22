@@ -1,6 +1,7 @@
 {
   "name": "react-toss-me-a-book",
-  "version": "1.0.0",
+  "version": "0.1.0",
+  "private": true,
   "description": "A fullstack react app version of a previously worked on app",
   "main": "index.js",
   "scripts": {
@@ -12,7 +13,7 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
-},
+  },
   "devDependencies": {
     "concurrently": "^8.2.2"
   },
