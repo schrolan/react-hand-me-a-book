@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## API's used:
+This project uses the open library api (https://openlibrary.org/dev/docs/api/search).
+
 ## Available Scripts
 
 In the project directory, you can run:
