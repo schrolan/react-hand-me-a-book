@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose')
 const bcrypt = require('bcrypt')
 
-const trainerSchema = new Schema({
+const userSchema = new Schema({
     username: {
         type: String,
         //This makes sure that the user gives a username.
@@ -33,7 +33,7 @@ const trainerSchema = new Schema({
 })
 
 //Setting up a middleware to hook into different stages of a model. We will be using the pre middleware to hook into before this gets saved.
-trainerSchema.pre('save', async function(next) {
+userSchema.pre('save', async function(next) {
     if (this.isNew || this.isModified('password')) {
         //This is the number that determines the random charachters that are hashed into a password
         const saltRounds = 10
