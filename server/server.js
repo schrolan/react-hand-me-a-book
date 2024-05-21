@@ -3,11 +3,18 @@ const path = require('path')
 const express = require('express')
 //This will start up the mongo connection
 const connection = require('./config/connection')
+//This will get the apollo server set up
+const { ApolloServer } = require('@apollo/server')
+const { expressMiddleware } = require('@apollo/server/express4')
+const typeDefs = require('./schemas/typeDefs')
+const resolvers = require('./schemas/resolvers')
 
 //This will use the .env port all caps from heroku or the local host of 3001
 const PORT = process.env.PORT || 3001
 //This is the express app
 const app = express()
+//This is where we instatiate our apollo server
+const apolloServer = new ApolloServer({ typeDefs, resolvers })
 
 //There is differnt ways of sending data on the body of the request. urlencoded is one way of sending data. urlencoded is a middleware.
 //The extended false is one setting that you can add to this middleware
@@ -28,5 +35,12 @@ app.get('/', (req, res) => {
 
 //We want to use the connection we imported above. This is an event listener on mongoose and you can listen to an event only one time. Inside we start up the express server.
 connection.once('open', async () => {
-    console.log(`Express server listening on http://localhost:${PORT}`)
+    await apolloServer.start()
+    //We want to run the apollo server through the middleware
+    app.use('/graphql', expressMiddleware(apolloServer))
+
+    app.listen(PORT, () => {
+        console.log(`Express server listening on http://localhost:${PORT}`)
+        console.log(`Apollo GraphQL playground available at http://localhost:${PORT}/graphql`)
+    })
 })
