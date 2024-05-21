@@ -16,7 +16,7 @@ const typeDefs = `
 
     type Query {
         books: [Book]
-        book(title: String!): Book
+        book(_id: ID!): Book
         users: [User]
         user(_id: ID!): User
     }
