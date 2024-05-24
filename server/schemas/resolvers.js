@@ -1,4 +1,6 @@
+const { GraphQLError } = require('graphql')
 const { Book, User } = require('../models')
+const { signToken } = require('../utils/auth')
 
 const resolvers = {
     //Use return to return something to your query
@@ -18,6 +20,35 @@ const resolvers = {
         }
     },
     Mutation: {
+        login: async (parent, { email, password }, context, info) => {
+            //find the user based on email
+            const user = await User.findOne({ email })
+            if (!user) {
+                throw new GraphQLError('Trainer not found', {
+                    extensions: {
+                        code: 'USER NOT FOUND',
+                        http: { status: 404 }
+                    }
+                })
+            }
+            //verify the password
+            const isCorrectPassword = await user.isCorrectPassword(password)
+            if (!isCorrectPassword) {
+                throw new GraphQLError('Password incorrect', {
+                    extensions: {
+                        code: 'INCORRECT PASSWORD',
+                        http: { status: 401 }
+                    }
+                })
+            }
+            //sign the token
+            const token = signToken(user)
+            //return object that resembles Auth
+            return {
+                token,
+                user
+            }
+        },
         addBook: async (parent, args, context, info) => {
             const book = await Book.create(args)
             if (args.userId) {

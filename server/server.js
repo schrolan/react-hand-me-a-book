@@ -8,6 +8,7 @@ const { ApolloServer } = require('@apollo/server')
 const { expressMiddleware } = require('@apollo/server/express4')
 const typeDefs = require('./schemas/typeDefs')
 const resolvers = require('./schemas/resolvers')
+const { authMiddleware } = require('./utils/auth')
 
 //This will use the .env port all caps from heroku or the local host of 3001
 const PORT = process.env.PORT || 3001
@@ -37,7 +38,9 @@ app.get('/', (req, res) => {
 connection.once('open', async () => {
     await apolloServer.start()
     //We want to run the apollo server through the middleware
-    app.use('/graphql', expressMiddleware(apolloServer))
+    app.use('/graphql', expressMiddleware(apolloServer, {
+        context: authMiddleware
+    }))
 
     app.listen(PORT, () => {
         console.log(`Express server listening on http://localhost:${PORT}`)

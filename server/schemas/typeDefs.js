@@ -1,4 +1,9 @@
 const typeDefs = `
+    type Auth {
+        token: String
+        user: User
+    }
+
     type Book {
         _id: ID
         title: String
@@ -22,6 +27,8 @@ const typeDefs = `
     }
 
     type Mutation {
+        login(email: String, password: String!): Auth
+
         addBook(
             userId: ID!
             title: String!
