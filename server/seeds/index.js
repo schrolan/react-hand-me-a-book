@@ -19,14 +19,16 @@ connection.once('open', async () => {
                 title, 
                 author_name, 
                 cover_i, 
-                first_publish_year 
+                first_publish_year,
+                subject
             } = data.docs[randomIndex]
 
             await Book.create({
                 title,
                 author_name,
                 cover_i,
-                first_publish_year
+                first_publish_year,
+                subject
             })
         } else {
             console.log(`No data found for book: ${id}`)

@@ -9,6 +9,7 @@ const Search = () => {
     const [error, setError] = useState(null)
     const [book, setBook] = useState(null)
     const [searchTerm, setSearchTerm] = useState('Treasure Island')
+    const [category, setCategory] = useState('title')
 
     useEffect(() => {
         getBook()
@@ -17,7 +18,7 @@ const Search = () => {
     const getBook = () => {
         setLoading(true)
         setError(null)
-        fetch(`https://openlibrary.org/search.json?q=${searchTerm}`)
+        fetch(`https://openlibrary.org/search.json?${category}=${searchTerm}`)
             .then(response => response.json())
             .then(json => setBook(json))
             .catch(err => setError(err))
@@ -39,10 +40,39 @@ const Search = () => {
         }
     }
 
+    const handleInputChange = e => {
+        setSearchTerm(e.target.value)
+    }
+
+    const handleCategoryChange = e => {
+        setCategory(e.target.value)
+    }
+
+    const handleFormSubmit = e => {
+        e.preventDefault()
+        if (!searchTerm){
+            return
+        } 
+        getBook()
+    }
+
+    const reset = () => {
+        setSearchTerm('')
+        setError(null)
+        setBook(null)
+    }
+
     return (
         <>
 
-            <SearchForm />
+            <SearchForm 
+                searchTerm={searchTerm}
+                handleInputChange={handleInputChange}
+                handleFormSubmit={handleFormSubmit}
+                reset={reset}
+                category={category}
+                handleCategoryChange={handleCategoryChange}
+            />
             { renderUI() }
         </>
     )
