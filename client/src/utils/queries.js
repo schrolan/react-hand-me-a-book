@@ -11,17 +11,17 @@ export const GET_BOOKS = gql`
   }
 `
 
-export const GET_TRAINERS = gql`
-  query ALL_TRAINERS {
-    trainers {
+export const GET_USERS = gql`
+  query ALL_USERS {
+    users {
       _id
       username
       email
-      pokemon {
+      book {
         _id
-        name
-        image
         title
+        author_name
+        first_publish_year
       }
     }
   }

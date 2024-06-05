@@ -38,7 +38,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Search />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/user" element={<User />} />
+          <Route path="/user/:id" element={<User />} />
         </Routes>
       </Screen>
       </BrowserRouter>

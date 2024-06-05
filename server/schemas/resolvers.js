@@ -10,13 +10,13 @@ const resolvers = {
             return await Book.find()
         },
         book: async (parent, args, context, info) => {
-            return await Book.findById(args._id)
+            return await Book.findOne({ title: args.title })
         },
         users: async (parent, args, context, info) => {
             return await User.find()
         },
         user: async (parent, args, context, info) => {
-            return await User.findById(args._id)
+            return await User.findById(args._id).populate('book')
         }
     },
     Mutation: {
@@ -24,7 +24,7 @@ const resolvers = {
             //find the user based on email
             const user = await User.findOne({ email })
             if (!user) {
-                throw new GraphQLError('Trainer not found', {
+                throw new GraphQLError('User not found', {
                     extensions: {
                         code: 'USER NOT FOUND',
                         http: { status: 404 }
