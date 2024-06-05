@@ -29,7 +29,7 @@ export const ADD_USER = gql`
 export const ADD_BOOK = gql`
   mutation ADD_BOOK(
     $title: String!, 
-    $author_name: String!, 
+    $author_name: [String], 
     $first_publish_year: Int, 
     $cover_i: Int,
     $userId: ID!
@@ -37,7 +37,7 @@ export const ADD_BOOK = gql`
     addBook( 
       title: $title,
       author_name: $author_name,
-      first_publish_year: $weight,
+      first_publish_year: $first_publish_year,
       cover_i: $cover_i,
       userId: $userId
     ) {
