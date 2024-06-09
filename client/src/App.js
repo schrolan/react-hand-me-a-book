@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Router } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ApolloClient, createHttpLink, InMemoryCache, ApolloProvider } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
 import Auth from './utils/auth'
@@ -6,9 +6,12 @@ import Auth from './utils/auth'
 import Search from './pages/search'
 import User from './pages/user'
 import Login from './pages/login'
+import SignUp from './pages/signUp'
 
 import Screen from './components/screen'
 import Header from './components/header'
+
+import { ThemeProvider } from './ctx/themeContext'
 
 const httpLink = createHttpLink({
   uri: '/graphql'
@@ -32,16 +35,19 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <BrowserRouter>
-      <Header />
-      <Screen>
-        <Routes>
-          <Route path="/" element={<Search />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/user/:id" element={<User />} />
-        </Routes>
-      </Screen>
-      </BrowserRouter>
+      <ThemeProvider>
+        <BrowserRouter>
+          <Header />
+          <Screen>
+            <Routes>
+              <Route path="/" element={<Search />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/user/:id" element={<User />} />
+              <Route path="/signUp" element={<SignUp />} />
+            </Routes>
+          </Screen>
+        </BrowserRouter>
+      </ThemeProvider>
     </ApolloProvider>
   );
 }

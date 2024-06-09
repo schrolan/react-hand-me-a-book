@@ -40,6 +40,20 @@ class AuthService {
     localStorage.removeItem(lsKey)
     window.location.assign(`/`)
   }
+
+
+  // addUser(token) {
+  //   console.log('Token:', token); // Add this line
+  //   localStorage.setItem(lsKey, token);
+  //   const decoded = decode(token);
+  //   const { _id } = decoded?.data;
+  //   window.location.assign(`/user/${_id}`);
+  // }
+  addUser(token) {
+    
+      this.login(token)
+    
+  }
 }
 
 export default new AuthService()

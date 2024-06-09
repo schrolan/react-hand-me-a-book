@@ -3,9 +3,11 @@ import { GET_USER } from "../utils/queries"
 import { useQuery } from "@apollo/client"
 import Spinner from "../components/spinner"
 import Auth from "../utils/auth"
+import { useThemeContext } from "../ctx/themeContext"
 
 const User = () => {
     const { id } = useParams()
+    const { theme, setTheme } = useThemeContext()
 
     const { data, loading, error } = useQuery(GET_USER, {
         variables: {
@@ -25,7 +27,11 @@ const User = () => {
             <button onClick={() => Auth.logout()}>Log out</button>
 
             <h2>Theme</h2>
-            <select>
+            <select 
+                value={theme}
+                onChange={e => setTheme(e.target.value)}
+            
+            >
                 {['Light', 'Dark'].map(mode => {
                     return <option value={mode} key={mode}>{mode}</option>
                 })}
@@ -34,7 +40,7 @@ const User = () => {
             <h2>My Books...</h2>
             <ul>
                 {user.book.map((book, i) => {
-                    return <li key={`${book.title}-${i}`}>{book.title}</li>
+                    return <li key={`${book.title}-${i}`}>{book.title} by {book.author_name} <button>X</button> </li>
                 })}
             </ul>
 

@@ -2,6 +2,7 @@ import { useState } from "react"
 import { LOGIN } from "../utils/mutations"
 import { useMutation } from "@apollo/client"
 import Auth from '../utils/auth'
+import { Link } from "react-router-dom"
  
 const Login = () => {
     const [email, setEmail] = useState('')
@@ -39,6 +40,11 @@ const Login = () => {
                 type="password"
             />
             <button>Login</button>
+            <Link to={"/signUp"}>
+                <div>
+                    <button>SignUp</button>
+                </div>
+            </Link>
         </form>
     )
 }
