@@ -30,5 +30,19 @@ code {
 }
 
 
+.app-header {
+  display: flex;
+  border: 5px solid goldenrod;
 
+}
 
+.MdPerson {
+  padding-left: 50%;
+  padding-right: 50%;
+  color: rgb(125, 167, 192);
+}
+
+.header-title {
+  padding-left: 40%;
+  padding-right: 40%;
+}

@@ -22,6 +22,7 @@ export const GET_USERS = gql`
         title
         author_name
         first_publish_year
+        cover_i
       }
     }
   }

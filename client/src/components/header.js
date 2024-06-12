@@ -10,12 +10,13 @@ const Header = () => {
         <header className="app-header">
             <Link to={toPath}>
                 <div>
-                    <MdPerson color="gold" size={65} />
+                    <MdPerson size={65} className="MdPerson" />
                 </div>
             </Link>
             <Link to={"/"}>
-                <MdSearch color="black" size={65}/>
+                <MdSearch color="black" size={65} className="search-icon"/>
             </Link>
+            <h1 className="header-title">Toss me a book!</h1>
         </header>
     )
 }

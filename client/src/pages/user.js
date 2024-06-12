@@ -19,7 +19,7 @@ const User = () => {
     if (loading) return <Spinner />
     if (error) return <p>Error {error.message}</p>
 
-    const user = data?.user || {}
+    const user = data?.user || {}    
 
     return (
         <>
@@ -31,7 +31,6 @@ const User = () => {
             <select 
                 value={theme}
                 onChange={e => setTheme(e.target.value)}
-            
             >
                 {['Light', 'Dark'].map(mode => {
                     return <option value={mode} key={mode}>{mode}</option>
@@ -41,10 +40,24 @@ const User = () => {
             <h2>My Books...</h2>
             <ul>
                 {user.book.map((book, i) => {
-                    return <li key={`${book.title}-${i}`}>{book.title} by {book.author_name} <DeleteBookButton userId={user._id} bookId={book._id} /> </li>
+                    return <li 
+                            key={`${book.title}-${i}`}>
+                                <div style={{
+                                    display: 'flex',
+                                    justifyContent:'space-between'
+                                }}>
+                                    <h1>{book.title} <DeleteBookButton userId={user._id} bookId={book._id}/> </h1>
+                                </div>
+                                <img 
+                                    src={`http://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
+                                    alt={`The cover of the book ${book.title}`}
+                                />
+                                <h2>Written By: {book.author_name}</h2>
+                                <h2>Published in {book.first_publish_year}</h2>
+                        </li>
                 })}
             </ul>
-
+                
         </>
     )
 }
