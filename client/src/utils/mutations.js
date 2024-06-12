@@ -45,3 +45,18 @@ export const ADD_BOOK = gql`
     }
   }
 `
+
+export const DELETE_BOOK = gql`
+  mutation DELETE_BOOK($userId: ID!, $bookId: ID!) {
+    deleteBook(userId: $userId, bookId: $bookId) {
+      _id
+      username
+      email
+      book {
+        _id
+        title
+        author_name
+      }
+    }
+  }
+`

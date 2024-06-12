@@ -64,6 +64,13 @@ const resolvers = {
             const user = await User.create(args)
             const token = signToken(user);
             return { token, user };
+        },
+        deleteBook: async (parent, { userId, bookId }, context, info) => {
+            const user = await User.findById(userId);
+            user.book.pull(bookId);
+            await user.save();
+            await Book.findByIdAndDelete(bookId);
+            return user;
         }
     }
 }

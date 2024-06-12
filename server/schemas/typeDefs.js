@@ -41,6 +41,7 @@ const typeDefs = `
             email: String!
             password: String!
         ):User
+        deleteBook(userId: ID!, bookId: ID!): User
     }
 `
 

@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/client"
 import Spinner from "../components/spinner"
 import Auth from "../utils/auth"
 import { useThemeContext } from "../ctx/themeContext"
+import DeleteBookButton from "../components/deleteButton"
 
 const User = () => {
     const { id } = useParams()
@@ -40,7 +41,7 @@ const User = () => {
             <h2>My Books...</h2>
             <ul>
                 {user.book.map((book, i) => {
-                    return <li key={`${book.title}-${i}`}>{book.title} by {book.author_name} <button>X</button> </li>
+                    return <li key={`${book.title}-${i}`}>{book.title} by {book.author_name} <DeleteBookButton userId={user._id} bookId={book._id} /> </li>
                 })}
             </ul>
 
