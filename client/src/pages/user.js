@@ -37,27 +37,32 @@ const User = () => {
                 })}
             </select>
 
+            
             <h2>My Books...</h2>
-            <ul>
-                {user.book.map((book, i) => {
-                    return <li 
+                <ul>
+                    {user.book.map((book, i) => {
+                        return <li 
                             key={`${book.title}-${i}`}>
+                                <div className="card" style={{width: 25+ '%'}}>
                                 <div style={{
-                                    display: 'flex',
-                                    justifyContent:'space-between'
-                                }}>
-                                    <h1>{book.title} <DeleteBookButton userId={user._id} bookId={book._id}/> </h1>
+                                        display: 'flex',
+                                        justifyContent:'space-between'
+                                    }}>
+                                        <h1>{book.title}</h1>
+                                    </div>
+                                    <img 
+                                        src={`http://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
+                                        alt={`The cover of the book ${book.title}`}
+                                        className="card-img-top"
+                                    />
+                                    <div>
+                                        <p className="card-text">Written By: {book.author_name}</p>
+                                        <p className="card-text">Published in {book.first_publish_year}</p>
+                                    </div>
                                 </div>
-                                <img 
-                                    src={`http://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
-                                    alt={`The cover of the book ${book.title}`}
-                                />
-                                <h2>Written By: {book.author_name}</h2>
-                                <h2>Published in {book.first_publish_year}</h2>
-                        </li>
-                })}
-            </ul>
-                
+                            </li>
+                    })}
+                </ul>
         </>
     )
 }

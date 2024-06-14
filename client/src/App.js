@@ -13,6 +13,8 @@ import Header from './components/header'
 
 import { ThemeProvider } from './ctx/themeContext'
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const httpLink = createHttpLink({
   uri: '/graphql'
 })

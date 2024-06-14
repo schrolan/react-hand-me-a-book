@@ -30,7 +30,7 @@ code {
 }
 
 
-.app-header {
+/* .app-header {
   display: flex;
   border: 5px solid goldenrod;
 
@@ -45,4 +45,12 @@ code {
 .header-title {
   padding-left: 40%;
   padding-right: 40%;
+} */
+
+.card {
+  margin: 0 auto;
+  float: none;
+  border: solid goldenrod 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
