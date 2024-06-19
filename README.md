@@ -1,3 +1,7 @@
+# Hand me a Book
+
+This project is a full react app that gives the user a book based on the criteria that they put in. You are able to create a user and login. Once you have created a user you are able to save the books that you find to your profile where you can check the title, author, cover image, and the first year the book you saved was published.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
