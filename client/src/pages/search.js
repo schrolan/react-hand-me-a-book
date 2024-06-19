@@ -41,10 +41,12 @@ const Search = () => {
     }
 
     const handleInputChange = e => {
+        e.preventDefault()
         setSearchTerm(e.target.value)
     }
 
     const handleCategoryChange = e => {
+        e.preventDefault()
         setCategory(e.target.value)
     }
 

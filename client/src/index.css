@@ -29,28 +29,9 @@ code {
   100% { transform: rotate(360deg); }
 }
 
-
-/* .app-header {
-  display: flex;
-  border: 5px solid goldenrod;
-
-}
-
-.MdPerson {
-  padding-left: 50%;
-  padding-right: 50%;
-  color: rgb(125, 167, 192);
-}
-
-.header-title {
-  padding-left: 40%;
-  padding-right: 40%;
-} */
-
-.card {
-  margin: 0 auto;
-  float: none;
-  border: solid goldenrod 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+    gap: 17%;
+    list-style-type: none;
 }

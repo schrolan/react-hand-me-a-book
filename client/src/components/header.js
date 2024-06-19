@@ -20,7 +20,9 @@ const Header = () => {
                     </a>
                 </form>
 
-                <a className="navbar-brand">Toss me a Book</a>
+                <a className="navbar-brand">
+                    <h3>Hand me a Book</h3>
+                </a>
                 
                 <form className="d-flex">
                     <a className="btn btn-success" type="submit">

@@ -40,28 +40,35 @@ const SignUp = () => {
     return (
         <form id="signUp-form" onSubmit={handleSubmit}>
             <h1>Sign Up</h1>
-            <input 
-                name="username"
-                value={username}
-                onChange={e => setUsername(e.target.value)}
-                placeholder="username"
-                type="text"
-            />
-            <input 
-                name="email"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-                placeholder="email"
-                type="email"
-            />
-            <input 
-                name="password"
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-                placeholder="password"
-                type="password"
-            />
-            <button>SignUp</button>
+            <nav className="navbar navbar-expand-lg navbar-light bg-success">
+               <div className="container-fluid">
+                    <input 
+                        name="username"
+                        value={username}
+                        onChange={e => setUsername(e.target.value)}
+                        placeholder="username"
+                        type="text"
+                        className="form-control me-2"
+                    />
+                    <input 
+                        name="email"
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                        placeholder="email"
+                        type="email"
+                        className="form-control me-2"
+                    />
+                    <input 
+                        name="password"
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
+                        placeholder="password"
+                        type="password"
+                        className="form-control me-2"
+                    />
+                    <button className="btn btn-info">SignUp</button>
+                </div>
+             </nav>
         </form>
     )
 }

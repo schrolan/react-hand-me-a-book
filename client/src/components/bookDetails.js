@@ -47,23 +47,28 @@ const BookDetails = (props) => {
     
     return (
         <Container classname='results'>
-            <div style={{
-                display: 'flex',
-                justifyContent:'space-between'
-            }}>
-                <h1>Title: {title}</h1>
-                {Auth.loggedIn() && (
-                    <button onClick={saveBook}>
-                        <MdSave size={25} />
-                    </button>
-                )}
+            <div className="card bg-success" style={{width: 25 + '%'}}>
+                <div style={{
+                    display: 'flex',
+                    justifyContent:'space-betwef'
+                }}>
+                    <h1>Title: {title}</h1>
+                    {Auth.loggedIn() && (
+                        <button className='btn btn-info' onClick={saveBook}>
+                            <MdSave size={25} />
+                        </button>
+                    )}
+                </div>
+                <img 
+                    src={coverImage}
+                    alt={`The cover of the book ${title}`}
+                    className="card-img-top"
+                />
+                <div>
+                    <h3 className="card-text">Written By: {author_name}</h3>
+                    <h3 className="card-text">Published in {first_publish_year}</h3>
+                </div>
             </div>
-            <img 
-                src={coverImage}
-                alt={`The cover of the book ${title}`}
-            />
-            <h2>Author: {author_name}</h2>
-            <h2>First year published: {first_publish_year}</h2>
         </Container>    
     )
 }

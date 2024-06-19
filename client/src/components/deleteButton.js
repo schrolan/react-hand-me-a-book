@@ -18,7 +18,7 @@ const DeleteBookButton = ({ userId, bookId }) => {
   }
 
   return (
-    <button onClick={handleDelete} disabled={loading}>X</button>
+    <button className='btn btn-success' onClick={handleDelete} disabled={loading}>Remove from shelf</button>
   )
 }
 
