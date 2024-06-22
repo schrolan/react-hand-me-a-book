@@ -33,12 +33,12 @@ app.use(express.json())
 if (process.env.NODE_ENV === 'production') {
     //This will set the path to the build folder. .. up then to client folder then to build folder.
     app.use(express.static(path.join(__dirname, "..", "client", "build")))
+    //This is the route for the home route. This serves up the homepage from the compiled react app.
+    app.get('/', (req, res) => {
+        res.sendFile(path.join(__dirname, '..', 'build', 'client', 'index.html'))
+    })
 }
 
-//This is the route for the home route. This serves up the homepage from the compiled react app.
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'build', 'client', 'index.html'))
-})
 
 //We want to use the connection we imported above. This is an event listener on mongoose and you can listen to an event only one time. Inside we start up the express server.
 connection.once('open', async () => {
