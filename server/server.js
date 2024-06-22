@@ -19,7 +19,7 @@ const app = express()
 const apolloServer = new ApolloServer({ typeDefs, resolvers })
 
 app.use(cors({
-    origin: 'https://hand-me-a-book.com',
+    origin: 'https://main.d535sstxfhke4.amplifyapp.com',
 }))
 
 //There is differnt ways of sending data on the body of the request. urlencoded is one way of sending data. urlencoded is a middleware.
