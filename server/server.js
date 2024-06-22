@@ -19,7 +19,7 @@ const app = express()
 const apolloServer = new ApolloServer({ typeDefs, resolvers })
 
 app.use(cors({
-    origin: 'http://localhost:3001',
+    origin: 'https://main.d535sstxfhke4.amplifyapp.com',
     credentials: true
 }))
 
