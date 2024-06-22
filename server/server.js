@@ -1,6 +1,7 @@
 //Path comes with node so no need to install it
 const path = require('path')
 const express = require('express')
+const cors = require('cors')
 //This will start up the mongo connection
 const connection = require('./config/connection')
 //This will get the apollo server set up
@@ -16,6 +17,10 @@ const PORT = process.env.PORT || 3001
 const app = express()
 //This is where we instatiate our apollo server
 const apolloServer = new ApolloServer({ typeDefs, resolvers })
+
+app.use(cors({
+    origin: 'https://hand-me-a-book.com',
+}))
 
 //There is differnt ways of sending data on the body of the request. urlencoded is one way of sending data. urlencoded is a middleware.
 //The extended false is one setting that you can add to this middleware
