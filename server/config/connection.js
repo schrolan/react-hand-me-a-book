@@ -1,12 +1,5 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
-// Retrieve MongoDB URI from environment variables
-const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/mydatabase';
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/handmeabook')
 
-mongoose.connect(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-
-// Export the connection
-module.exports = mongoose.connection;
+module.exports = mongoose.connection
