@@ -33,7 +33,7 @@ connection.once('open', async () => {
     context: authMiddleware,
   }));
 
-  app.listen(PORT, () => {
+  app.listen(process.env.PORT || 3000, () => {
     console.log(`Express server listening on http://localhost:${PORT}`);
     console.log(`Apollo GraphQL playground available at http://localhost:${PORT}/graphql`);
   });
