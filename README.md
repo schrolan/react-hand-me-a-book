@@ -4,10 +4,14 @@ Hand me a Book is a comprehensive React application that enables users to search
 
 ## Features
 
-    User Authentication: Create an account and log in to access personalized features.
-    Book Search: Find books by subject, author, or title using the Open Library API.
-    Profile Management: Save books to your profile and view details at any time.
-    Detailed Book Information: View book titles, authors, cover images, and publication years.
+User Authentication: Create an account and log in to access personalized features.
+Book Search: Find books by subject, author, or title using the Open Library API.
+Profile Management: Save books to your profile and view details at any time.
+Detailed Book Information: View book titles, authors, cover images, and publication years.
+
+## Deployed site
+
+This site was deployed using heroku and can be found at the following url: https://royal-chesterfield-46958-9ef8e8cd4235.herokuapp.com/
 
 ## Getting Started
 
@@ -57,17 +61,17 @@ Ejecting:
 
 ## Learn More
 
-    [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started)
-    [React documentation](https://reactjs.org/)
+[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started)
+[React documentation](https://reactjs.org/)
 
 ## Additional Resources
 
-    [Code Splitting]
-    [Analyzing the Bundle Size]
-    [Making a Progressive Web App]
-    [Advanced Configuration]
-    [Deployment]
-    [Troubleshooting npm run build failures]
+[Code Splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+[Analyzing the Bundle Size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+[Making a Progressive Web App](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+[Advanced Configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+[Deployment](https://facebook.github.io/create-react-app/docs/deployment)
+[Troubleshooting npm run build failures](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 ## API
 
