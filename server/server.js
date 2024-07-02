@@ -12,12 +12,6 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const apolloServer = new ApolloServer({ typeDefs, resolvers });
 
-// CORS configuration
-app.use(cors({
-  origin: 'https://main.d535sstxfhke4.amplifyapp.com', // Replace with your deployed frontend URL
-  credentials: true, // Optional: if your frontend sends credentials (e.g., cookies)
-}));
-
 // Middleware for parsing request bodies
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
