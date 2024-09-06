@@ -10,6 +10,9 @@ import SignUp from './pages/signUp'
 
 import Screen from './components/screen'
 import Header from './components/header'
+import Sidebar from './components/sidebar'
+import Container from './components/container'
+import Footer from './components/footer'
 
 import { ThemeProvider } from './ctx/themeContext'
 
@@ -40,6 +43,7 @@ function App() {
       <ThemeProvider>
         <BrowserRouter>
           <Header />
+          <Container>
           <Screen>
             <Routes>
               <Route path="/" element={<Search />} />
@@ -47,7 +51,11 @@ function App() {
               <Route path="/user/:id" element={<User />} />
               <Route path="/signUp" element={<SignUp />} />
             </Routes>
+            <Sidebar>
+            </Sidebar>
           </Screen>
+          </Container>
+          <Footer />
         </BrowserRouter>
       </ThemeProvider>
     </ApolloProvider>

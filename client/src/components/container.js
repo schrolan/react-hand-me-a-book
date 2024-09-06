@@ -1,6 +1,6 @@
 const Container = props => {
     return (
-        <div className={`constiner ${props.className} || ''}`}>
+        <div className={`container ${props.className} || ''}`}>
             {props.children}
         </div>
     )
