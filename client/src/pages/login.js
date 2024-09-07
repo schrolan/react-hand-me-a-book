@@ -1,25 +1,36 @@
 import { useState } from "react"
 import { LOGIN } from "../utils/mutations"
-import { useMutation } from "@apollo/client"
+import { fromError, useMutation } from "@apollo/client"
 import Auth from '../utils/auth'
 import { Link } from "react-router-dom"
  
 const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [formError, setFormError] = useState('')
 
     const [login, { loading, error }] = useMutation(LOGIN)
 
     const handleSubmit = async e => {
         e.preventDefault()
-        const { data } = await login({
-            variables: {
-                email,
-                password,
-            }
-        })
-        console.log(data)
-        Auth.login(data.login.token)
+        if (!email || !password) {
+            setFormError('Email and password must both be filled out.')
+            return
+        }
+
+        setFormError('')
+        try {
+            const { data } = await login({
+                variables: {
+                    email,
+                    password,
+                }
+            })
+            console.log(data)
+            Auth.login(data.login.token)
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     return (
@@ -59,6 +70,17 @@ const Login = () => {
                             </button>
                         </div>
                     </Link>
+                {formError && <p style={{ color: 'red' }}>{formError}</p>}
+
+                {error && (
+                    <p style={{ color: 'red' }}>
+                        {error.message.includes('User not found')
+                        ? 'No user found with this email.'
+                        : error.message.includes('Password incorrect')
+                            ? 'Incorrect password.'
+                            : 'Login failed. Please try again'}
+                    </p>
+                )}
                 </form>
             </div>
         </nav>

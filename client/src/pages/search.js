@@ -20,7 +20,13 @@ const Search = () => {
         setError(null)
         fetch(`https://openlibrary.org/search.json?${category}=${searchTerm}`)
             .then(response => response.json())
-            .then(json => setBook(json))
+            .then(json => {
+                if (json.docs.length === 0) {
+                    setError('No books returned with your criteria.')
+                } else {
+                    setBook(json)
+                }
+                })
             .catch(err => setError(err))
             .finally(() => setLoading(false))
     }
