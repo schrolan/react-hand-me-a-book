@@ -1,6 +1,6 @@
 # Hand me a Book
 
-Hand me a Book is a comprehensive React application that enables users to search for and save books based on specific criteria such as subject, author, and title. The application leverages the Open Library API to provide an extensive database of books. Users can create an account, log in, and save their favorite books to their profile, where they can view details including the title, author, cover image, and the first year of publication.
+Hand me a Book is a comprehensive React application that enables users to search for and save books based on specific criteria: subject, author, and title. This application returns three random books based on those criteria. This application also allows users to create an account and save books that they may want to check out at a later date.
 
 ## Features
 
