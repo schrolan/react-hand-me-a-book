@@ -1,12 +1,24 @@
-const mongoose = require('mongoose');
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = process.env.MONGODB_URI || "mongodb+srv://root:<db_password>@cluster0.5jsp7.mongodb.net/?retryWrites=true&w=majority";
 
-mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  }
 });
 
-const db = mongoose.connection;
-db.on('error', (error) => console.error(error));
-db.once('open', () => console.log('Connected to MongoDB'));
+async function connectDB() {
+  try {
+    // Connect to the MongoDB server
+    await client.connect();
+    console.log("Successfully connected to MongoDB!");
+    return client;
+  } catch (err) {
+    console.error("Failed to connect to MongoDB", err);
+    throw err;
+  }
+}
 
-module.exports = db;
+module.exports = { connectDB, client };

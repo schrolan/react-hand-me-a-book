@@ -19,8 +19,9 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "concurrently": "^8.2.2",
     "cors": "^2.8.5",
     "if-env": "^1.0.4",
-    "concurrently": "^8.2.2"
+    "mongodb": "^6.9.0"
   }
 }
