@@ -42,7 +42,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/react-han
   });
 
   // Start the Express server
-  app.listen(PORT, '0.0.0.0', () => {
+  app.listen(PORT, () => {
     console.log(`Express server listening on http://localhost:${PORT}`);
     console.log(`Apollo GraphQL playground available at http://localhost:${PORT}/graphql`);
   });
