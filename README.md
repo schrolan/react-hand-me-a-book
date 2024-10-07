@@ -12,6 +12,7 @@ Detailed Book Information: View book titles, authors, cover images, and publicat
 ## Deployed site
 
 This site was deployed using heroku and can be found at the following url: https://royal-chesterfield-46958-9ef8e8cd4235.herokuapp.com/
+This site was also deployed using an AWS instance. That can be found here: http://3.22.112.97/
 
 ## Getting Started
 
