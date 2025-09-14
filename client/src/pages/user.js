@@ -14,6 +14,8 @@ const User = () => {
         }
     })
 
+    console.log(data)
+
     if (loading) return <Spinner />
     if (error) return <p>Error {error.message}</p>
 

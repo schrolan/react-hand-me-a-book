@@ -19,7 +19,7 @@ import { ThemeProvider } from './ctx/themeContext'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const httpLink = createHttpLink({
-  uri: '/graphql'
+  uri: 'http://3.144.161.54:3000/graphql'
 })
 
 const authLink = setContext((_, { headers }) => {
