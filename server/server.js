@@ -7,7 +7,7 @@ const typeDefs = require('./schemas/typeDefs');
 const resolvers = require('./schemas/resolvers');
 const { authMiddleware } = require('./utils/auth');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 const app = express();
 
 // Middleware for parsing JSON and urlencoded data
