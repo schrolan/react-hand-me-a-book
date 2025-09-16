@@ -14,32 +14,20 @@
   animation: bounce 0.6s infinite ease-in-out;
 }
 
-.dot:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.dot:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.dot:nth-child(3) {
-  animation-delay: 0.4s;
-}
+.dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
 
 @keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 .custom-font, .book-background, .card {
   color: rgb(248, 183, 20);
   font-family: serif;
   font-style: italic;
-   -webkit-text-stroke: .1px black;
+  -webkit-text-stroke: .1px black;
 }
 
 .book, .book-background {
@@ -58,29 +46,13 @@
   animation: floatIn 1s forwards ease-in-out;
 }
 
-
-.card:nth-child(1) {
-  animation-delay: 0s; 
-}
-
-.card:nth-child(2) {
-  animation-delay: 0.3s; 
-}
-
-.card:nth-child(3) {
-  animation-delay: 0.6s;
-}
-
+.card:nth-child(1) { animation-delay: 0s; }
+.card:nth-child(2) { animation-delay: 0.3s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
 
 @keyframes floatIn {
-  0% {
-      opacity: 0;
-      transform: translateY(50px);
-  }
-  100% {
-      opacity: 1;
-      transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 .card-container {
@@ -100,9 +72,7 @@
   margin: 10px;
 }
 
-.book-background {
-  padding-right: 15%;
-}
+.book-background { padding-right: 15%; }
 
 .sidebar {
   width: 16.5%;
@@ -112,7 +82,6 @@
   background-color: #753737;
   z-index: 999;
 }
-
 
 .left-sidebar {
   left: 0;
@@ -145,13 +114,42 @@
 }
 
 .screen {
+  min-height: 100vh;
   background-color: rgb(212, 212, 160);
-  background-image: 
-    radial-gradient(circle, #cac7ba 12%, transparent 13%);
+  background-image: radial-gradient(circle, #cac7ba 12%, transparent 13%);
   background-size: 45px 45px, 49px 49px, 34px 34px;
   background-position: 20px 20px, 70px 80px, 40px 50px;
 }
 
-.footer-font {
-  color: #97572b;
+.footer-font { color: #97572b; }
+
+/*---------------- Sticky Header ----------------*/
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/*---------------- Mobile Responsive ----------------*/
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .card {
+    flex: 1 1 90%;
+    max-width: 90%;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .app-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
 }
