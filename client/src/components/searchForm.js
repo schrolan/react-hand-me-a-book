@@ -1,7 +1,6 @@
 import { MdClear } from "react-icons/md"
 import Container from "./container"
 
-//The value for the input needs to come from the state.
 const SearchForm = ({ searchTerm, handleInputChange, handleFormSubmit, reset, category, handleCategoryChange }) => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -18,7 +17,7 @@ const SearchForm = ({ searchTerm, handleInputChange, handleFormSubmit, reset, ca
                             aria-label="Search" 
                         />
                 <select 
-                    className="btn btn-success" 
+                    className="btn" 
                     id="category" 
                     value={category} 
                     onChange={handleCategoryChange}
@@ -28,14 +27,14 @@ const SearchForm = ({ searchTerm, handleInputChange, handleFormSubmit, reset, ca
                         <option value="subject">Subject</option>
                 </select>
                 <button 
-                className="btn btn-outline-success" 
+                className="btn" 
                 type="submit"
                 >
                     Search
                 </button>
             {searchTerm && (
                 <button 
-                    className="btn btn-success" 
+                    className="btn" 
                     type="button" 
                     onClick={reset}
                 >
