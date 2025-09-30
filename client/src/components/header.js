@@ -17,40 +17,25 @@ const Header = () => {
     return (
         <header className="app-header">
             <nav className="navbar navbar-expand-lg book">
-            <div className="container-fluid">
-                <form className="d-flex">
-                    <a className="btn btn-success" type="submit">
-                        <Link to={"/"}>
-                            <a className="nav-link">
-                                <h2 className="custom-font">Search</h2>
-                            </a>
+                <div className="container-fluid">
+                    <form className="d-flex">
+                        <Link to="/" className="btn nav-link">
+                            <h2 className="custom-font">Search</h2>
                         </Link>
-                    </a>
-                </form>
+                    </form>
 
-                <a className="navbar-brand">
-                    <h1 className="custom-font">Hand me a Book
-                        <button className="btn btn-info" onClick={handleAlert}>
-                            ?
-                        </button>
-                    </h1>
+                        <h1 className="custom-font">Hand me a Book
+                            <button className="btn" onClick={handleAlert}>
+                                ?
+                            </button>
+                        </h1>
                     
-
-                        
-                </a>
-                
-                <form className="d-flex">
-                    <a className="btn btn-success" type="submit">
-                        <Link to={toPath}>
-                            <div>
-                                <a className="nav-link">
-                                    <h2 className="custom-font">Your Collection</h2>
-                                </a>
-                            </div>
+                    <form className="d-flex">
+                        <Link to={toPath} className="btn nav-link">
+                            <h2 className="custom-font">Your Collection</h2>
                         </Link>
-                    </a>
-                </form>
-            </div>
+                    </form>
+                </div>
             </nav>
         </header>
     )

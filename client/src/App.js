@@ -12,7 +12,6 @@ import Screen from './components/screen'
 import Header from './components/header'
 import Sidebar from './components/sidebar'
 import Container from './components/container'
-import Footer from './components/footer'
 
 import { ThemeProvider } from './ctx/themeContext'
 
@@ -55,7 +54,6 @@ function App() {
             </Sidebar>
           </Screen>
           </Container>
-          <Footer />
         </BrowserRouter>
       </ThemeProvider>
     </ApolloProvider>
