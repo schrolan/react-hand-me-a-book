@@ -18,7 +18,7 @@ const SearchForm = ({
               value={searchTerm}
               onChange={handleInputChange}
               placeholder="Look for a book"
-              className="form-control me-2"
+              className="form-control"
               aria-label="Search"
             />
 

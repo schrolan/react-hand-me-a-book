@@ -23,11 +23,11 @@ const User = () => {
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-light bg-success">
+            <nav className="navbar">
             <div className="container-fluid">
                 
                 <h1 className="custom-font">{user.username}: <h6 className="custom-font">{user.email}</h6></h1>
-                <button onClick={() => Auth.logout()} className="btn btn-info custom-font">Log out</button>
+                <button onClick={() => Auth.logout()} className="btn">Log out</button>
             </div>
             </nav>
                 <h1 className="custom-font">Books to check out</h1>
@@ -39,7 +39,7 @@ const User = () => {
 
 
                             return (
-                                <div className="card bg-success" key={`${book.title}-${i}`}>
+                                <div className="card" key={`${book.title}-${i}`}>
                                     <div style={{
                                             display: 'flex',
                                             justifyContent:'space-between'

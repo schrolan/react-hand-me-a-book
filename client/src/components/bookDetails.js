@@ -42,11 +42,11 @@ const BookDetails = (props) => {
                     const coverImage = `http://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
 
                     return (
-                        <div className="card bg-success" key={index}>
+                        <div className="card" key={index}>
                             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                                 <h1 className='book-background'>Title: {book.title}</h1>
                                 {Auth.loggedIn() && (
-                                    <button className='btn btn-info' onClick={() => saveBook(book)}>
+                                    <button className='btn' onClick={() => saveBook(book)}>
                                         <MdSave size={25} />
                                     </button>
                                 )}

@@ -16,7 +16,7 @@ const Header = () => {
 
     return (
         <header className="app-header">
-            <nav className="navbar navbar-expand-lg book">
+            <nav className="navbar">
                 <div className="container-fluid">
                     <form className="d-flex">
                         <Link to="/" className="btn nav-link">

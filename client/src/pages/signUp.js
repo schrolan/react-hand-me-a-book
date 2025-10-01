@@ -40,7 +40,7 @@ const SignUp = () => {
     return (
         <form id="signUp-form" onSubmit={handleSubmit}>
             <h1>Sign Up</h1>
-            <nav className="navbar navbar-expand-lg navbar-light bg-success">
+            <nav className="navbar">
                <div className="container-fluid">
                     <input 
                         name="username"
@@ -48,7 +48,7 @@ const SignUp = () => {
                         onChange={e => setUsername(e.target.value)}
                         placeholder="username"
                         type="text"
-                        className="form-control me-2"
+                        className="form-control"
                     />
                     <input 
                         name="email"
@@ -56,7 +56,7 @@ const SignUp = () => {
                         onChange={e => setEmail(e.target.value)}
                         placeholder="email"
                         type="email"
-                        className="form-control me-2"
+                        className="form-control"
                     />
                     <input 
                         name="password"
@@ -64,9 +64,9 @@ const SignUp = () => {
                         onChange={e => setPassword(e.target.value)}
                         placeholder="password"
                         type="password"
-                        className="form-control me-2"
+                        className="form-control"
                     />
-                    <button className="btn btn-info">SignUp</button>
+                    <button className="btn">SignUp</button>
                 </div>
              </nav>
         </form>

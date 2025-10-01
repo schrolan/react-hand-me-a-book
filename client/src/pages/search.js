@@ -31,7 +31,6 @@ const Search = () => {
             .finally(() => setLoading(false))
     }
 
-    //Will return different parts of the UI
     const renderUI = () => {
         if (loading) {
             return <Spinner />

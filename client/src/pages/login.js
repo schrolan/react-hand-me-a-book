@@ -34,7 +34,7 @@ const Login = () => {
     }
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar">
             <h1>Login:</h1>
             <div className="container-fluid">
                 <form 
@@ -48,7 +48,7 @@ const Login = () => {
                         onChange={e => setEmail(e.target.value)}
                         placeholder="email"
                         type="email"
-                        className="form-control me-2" 
+                        className="form-control" 
                     />
                     <input
                         name="password"
@@ -56,16 +56,16 @@ const Login = () => {
                         onChange={e => setPassword(e.target.value)}
                         placeholder="password"
                         type="password"
-                        className="form-control me-2" 
+                        className="form-control" 
                     />
                     <button 
-                        className="btn btn-outline-success"
+                        className="btn"
                     >
                         Login
                     </button>
                     <Link to={"/signUp"}>
                         <div>
-                            <button className="btn btn-success">
+                            <button className="btn">
                                 SignUp
                             </button>
                         </div>
